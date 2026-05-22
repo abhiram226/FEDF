@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left, rgba(0,255,255,0.15), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(0,140,255,0.15), transparent 25%),
+    linear-gradient(135deg,#020617,#071126,#0f172a);
+
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NAVBAR */
+
+.navbar{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:28px 80px;
+}
+
+.logo{
+    font-size:38px;
+    font-weight:700;
+    color:#22d3ee;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#e2e8f0;
+    font-size:17px;
+    transition:0.3s;
+    position:relative;
+}
+
+.nav-links a:hover{
+    color:#22d3ee;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#22d3ee;
+    left:0;
+    bottom:-6px;
+    transition:0.3s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* HERO */
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 80px;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+/* LEFT */
+
+.hero-content{
+    flex:1;
+    max-width:620px;
+}
+
+.tagline{
+    color:#38bdf8;
+    font-size:15px;
+    letter-spacing:3px;
+    margin-bottom:18px;
+}
+
+.hero-content h2{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.hero-content span{
+    color:#22d3ee;
+    text-shadow:0 0 20px rgba(34,211,238,0.6);
+}
+
+.hero-content p{
+    font-size:19px;
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+/* BUTTON */
+
+#trackBtn{
+    padding:16px 34px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#06b6d4,#3b82f6);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 10px 30px rgba(6,182,212,0.35);
+}
+
+#trackBtn:hover{
+    transform:translateY(-4px) scale(1.03);
+    box-shadow:0 14px 35px rgba(6,182,212,0.45);
+}
+
+/* FLIGHT CARD */
+
+.flight-card{
+    width:360px;
+    padding:30px;
+    border-radius:28px;
+
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    0 0 30px rgba(34,211,238,0.1);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.flight-card::before{
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:rgba(34,211,238,0.15);
+    border-radius:50%;
+    top:-90px;
+    right:-90px;
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.card-top p{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.card-top h3{
+    font-size:42px;
+    margin-top:6px;
+}
+
+.status{
+    background:#16a34a;
+    padding:10px 16px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:1px;
+}
+
+/* DETAILS */
+
+.flight-details{
+    display:flex;
+    justify-content:space-between;
+    margin-top:25px;
+}
+
+.detail-box h4{
+    color:#94a3b8;
+    font-size:13px;
+    margin-bottom:6px;
+}
+
+.detail-box p{
+    font-size:18px;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:40px;
+    }
+
+    .navbar{
+        padding:25px 40px;
+    }
+
+    .hero-content h2{
+        font-size:56px;
+    }
+
+    .flight-card{
+        width:100%;
+        max-width:420px;
+    }
+}
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .nav-links{
+        gap:20px;
+    }
+
+    .hero-content h2{
+        font-size:44px;
+    }
+
+    .hero{
+        padding:30px;
+    }
+}
