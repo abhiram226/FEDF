@@ -1,56 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SkyTrack - Flight Status Tracker</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyTrack - Flight Status Tracker</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">✈ SkyTrack</h1>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">✈ SkyTrack</h1>
 
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Flights</a></li>
-        <li><a href="#">Status</a></li>
-        <li><a href="#">Alerts</a></li>
-      </ul>
-    </nav>
-  </header>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Flights</a></li>
+                <li><a href="#">Status</a></li>
+                <li><a href="#">Alerts</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <!-- Search Section -->
+    <div class="search-box">
 
-  <!-- Hero Section -->
-  <section class="hero">
+        <input
+            type="text"
+            id="flightInput"
+            placeholder="Enter Flight Number (AI302)"
+        >
 
-    <div class="hero-content">
-      <p class="tagline">REAL-TIME AIRLINE MONITORING</p>
+        <button id="trackBtn">
+            Search Flight
+        </button>
 
-      <h2>
-        Flight Status <br>
-        <span>Tracker</span>
-      </h2>
-
-      <p>
-        Track departures, arrivals, delays, gate updates,
-        and live airline information with a responsive modern interface.
-      </p>
-
-      <button id="trackBtn">Track Flight</button>
     </div>
+    
+    <div class="recent-searches">
+    <h3>Recent Searches</h3>
+    <ul id="recentList"></ul>
+</div>
 
+    <!-- Hero Section -->
+    <section class="hero">
 
-    <!-- Flight Card -->
-    <div class="flight-card">
+        <!-- Left Side -->
+        <div class="hero-content">
 
-      <div class="card-top">
-        <div>
-          <p>Flight Number</p>
-          <h3>AI-302</h3>
+            <p class="tagline">
+                REAL-TIME AIRLINE MONITORING
+            </p>
+
+            <h2>
+                Flight Status <br>
+                <span>Tracker</span>
+            </h2>
+
+            <p>
+                Track departures, arrivals, delays,
+                gate updates and live airline
+                information with a responsive
+                modern interface.
+            </p>
+
         </div>
 
-        <span class="status">ON TIME</span>
+        <!-- Flight Card -->
+        <div class="flight-card">
+
+            <div class="card-top">
+
+                <div>
+                    <p>Flight Number</p>
+                    <h3 id="flightNumber">
+                        AI302
+                    </h3>
+                </div>
+
+                <span
+                    class="status"
+                    id="status"
+                >
+                    ON TIME
+                </span>
+
+            </div>
+
+           <div class="flight-details">
+
+    <div class="detail-box">
+        <h4>Departure</h4>
+        <p id="departure">Delhi (DEL)</p>
+    </div>
+
+    <div class="detail-box">
+        <h4>Arrival</h4>
+        <p id="arrival">Mumbai (BOM)</p>
+    </div>
+
+</div>
+
+<div class="flight-route">
+    <span id="departureCode">DEL</span>
+
+    <div class="route-line">
+        <div class="plane">✈</div>
+    </div>
+
+    <span id="arrivalCode">BOM</span>
+</div>
+
+<div class="flight-time">
+    <div>
+        <h4>Flight Time</h4>
+        <p id="flightTime">2h 10m</p>
+    </div>
+
+    <div>
+        <h4>Airline</h4>
+        <p id="airline">Air India</p>
+    </div>
+</div>
+                <div class="progress">
+    <div class="progress-header">
+        <span>Departure</span>
+        <span>Arrival</span>
+    </div>
+
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+                <div class="detail-box">
+                    <h4>Arrival</h4>
+                    <p id="arrival">
+                        Mumbai
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
 </html>
